@@ -1,15 +1,23 @@
--- | Various distance functions.
+-- | Distance functions for numeric vectors.
 --
--- Each distance function is exposed as a pair of parametric modules -
--- one that lets you control both the scalar type and point
--- representation, and one that only lets you pick the scalar type,
--- and uses arrays for the point representation.  All the distance
--- functions here measure the distance using the same type as the
--- components of the vector.
+-- Each distance function is exposed as a parametric modules that lets
+-- you control both the scalar type and the dimensionality of the
+-- space that the vectors inhabit.  This is concretely done by
+-- specifying the representation of vectors as a module that
+-- implements the `vector`@mtype@"../vector/vector" module type.
+--
+-- When using low-dimensional spaces (say, less than 10), use an
+-- appropriately constructed statically sized vector module (see
+-- `vector_1`@term@"../vector/vector" and
+-- `cat_vector`@term@"../vector/vector").  For larger spaces, or
+-- convenience when experimenting, use
+-- `any_vector`@term@"../vector/vector".
+
+--  For convenience, the `vector` package is re-exported from this
+-- file.
+open import "../vector/vector"
 
 open import "has_distance"
-
-import "../vector/vector"
 
 local module helpers (R: real) (V: vector) = {
   let dotprod u v =
@@ -146,8 +154,3 @@ module mk_sqeuclidean (R: real) (V: vector)
     |> norm
     |> R.((** i32 2))
 }
-
-module mk_braycurtis' (R: real) = mk_braycurtis R any_vector
-module mk_euclidean' (R: real) = mk_euclidean R any_vector
-module mk_manhattan' (R: real) = mk_manhattan R any_vector
-module mk_cosine' (R: real) = mk_cosine R any_vector

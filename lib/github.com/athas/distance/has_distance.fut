@@ -1,4 +1,4 @@
--- | This file defines basic concepts for distance functions.
+-- | Basic concepts for distance functions.
 
 -- | A module that defines a distance function for points in some
 -- space.  Usually you only care about the function (and the type on

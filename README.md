@@ -17,7 +17,7 @@ $ futhark-pkg sync
 ```
 $ futharki
 > import "lib/github.com/athas/distance/distance"
-> module euclidean32 = mk_euclidean' f32
+> module euclidean32 = mk_euclidean f32 any_vector
 > euclidean32.distance [0,0] [1,1]
 1.4142135f32
 ```
