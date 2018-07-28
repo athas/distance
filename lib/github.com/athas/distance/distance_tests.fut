@@ -1,3 +1,5 @@
+-- | ignore
+
 import "distance"
 
 module vector_2 = cat_vector vector_1 vector_1
