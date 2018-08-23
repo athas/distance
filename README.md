@@ -1,4 +1,4 @@
-# Distance Functions for Futhark
+# Distance Functions for Futhark [![Build Status](https://travis-ci.org/athas/distance.svg?branch=master)](https://travis-ci.org/athas/distance)
 
 This package contains a variety of distance functions written in
 [Futhark](https://futhark-lang.org).  They are heavily inspired by the
