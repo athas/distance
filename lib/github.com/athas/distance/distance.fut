@@ -151,6 +151,6 @@ module mk_sqeuclidean (R: real) (V: vector)
   let distance (u: t) (v: t): distance =
     V.zip u v
     |> V.map (uncurry (R.-))
-    |> norm
-    |> R.((** i32 2))
+    |> V.map (R.((** i32 2)))
+    |> V.reduce (R.+) (R.i32 0)
 }
