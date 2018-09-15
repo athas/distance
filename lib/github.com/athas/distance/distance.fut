@@ -65,7 +65,7 @@ module mk_chebyshev (R: real) (V: vector)
   type distance = R.t
 
   let distance (u: t) (v: t): distance =
-    V.zip u v |> V.map (uncurry (R.-) >-> R.abs) |> V.reduce (R.max) R.smallest
+    V.zip u v |> V.map (uncurry (R.-) >-> R.abs) |> V.reduce (R.max) R.lowest
 }
 
 -- | Correlation distance.
