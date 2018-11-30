@@ -1,5 +1,5 @@
 package github.com/athas/distance
 
 require {
-  github.com/athas/vector 0.1.1 #dfe03be382e45802f188c799516fe42eb047fb3f
+  github.com/athas/vector 0.2.3 #91d8983c45d12c63cebecf2ffb73a2bd3b7215ed
 }
