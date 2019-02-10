@@ -8,14 +8,14 @@ SciPy](https://docs.scipy.org/doc/scipy/reference/spatial.distance.html).
 ## Installation
 
 ```
-$ futhark-pkg add github.com/athas/distance
-$ futhark-pkg sync
+$ futhark pkg add github.com/athas/distance
+$ futhark pkg sync
 ```
 
 ## Usage
 
 ```
-$ futharki
+$ futhark repl
 > import "lib/github.com/athas/distance/distance"
 > module euclidean32 = mk_euclidean f32 any_vector
 > euclidean32.distance [0,0] [1,1]
