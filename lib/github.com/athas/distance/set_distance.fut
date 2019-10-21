@@ -34,7 +34,7 @@ module mk_hamming (R: real) (V: vector):
     V.zip u v
     |> V.map (uncurry (!=) >-> R.bool)
     |> V.reduce (R.+) (R.i32 0)
-    |> R.((/ i32 (V.length u)))
+    |> R.((/ i32 V.length))
 }
 
 -- | Jaccard dissimilarity.
@@ -68,7 +68,7 @@ module mk_kulsinski (R: real) (V: vector):
     let c_tf = V.zip u v |> V.map tf |> V.reduce (R.+) (R.i32 0)
     let c_ft = V.zip u v |> V.map ft |> V.reduce (R.+) (R.i32 0)
     let c_tt = V.zip u v |> V.map tt |> V.reduce (R.+) (R.i32 0)
-    in R.((c_tf + c_ft - c_tt + i32 (V.length u)) / (c_ft + c_tf + i32 (V.length u)))
+    in R.((c_tf + c_ft - c_tt + i32 V.length) / (c_ft + c_tf + i32 V.length))
 }
 
 -- | Rogers-Tanimoto dissimilarity.
@@ -102,7 +102,7 @@ module mk_russellrao (R: real) (V: vector):
     let c_tt = V.zip u v
                |> V.map (uncurry (&&) >-> R.bool)
                |> V.reduce (R.+) (R.i32 0)
-    let n = R.i32 (V.length u)
+    let n = R.i32 V.length
     in R.((n - c_tt) / n)
 }
 
