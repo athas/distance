@@ -3,6 +3,7 @@
 import "distance"
 
 module vector_2 = cat_vector vector_1 vector_1
+let vec2 't (xs: []t) = vector_2.from_array (xs : [vector_2.length]t)
 
 -- ==
 -- entry: test_braycurtis
@@ -10,8 +11,8 @@ module vector_2 = cat_vector vector_1 vector_1
 -- output { 0.4f32 }
 module braycurtis = mk_braycurtis f32 vector_2
 entry test_braycurtis x0 y0 x1 y1 =
-  braycurtis.distance (vector_2.from_array [x0, y0])
-                      (vector_2.from_array [x1, y1])
+  braycurtis.distance (vec2 [x0, y0])
+                      (vec2 [x1, y1])
 
 -- ==
 -- entry: test_canberra
@@ -19,8 +20,8 @@ entry test_braycurtis x0 y0 x1 y1 =
 -- output { 0.8333333333333333f32 }
 module canberra = mk_canberra f32 vector_2
 entry test_canberra x0 y0 x1 y1 =
-  canberra.distance (vector_2.from_array [x0, y0])
-                    (vector_2.from_array [x1, y1])
+  canberra.distance (vec2 [x0, y0])
+                    (vec2 [x1, y1])
 
 -- ==
 -- entry: test_chebyshev
@@ -28,8 +29,8 @@ entry test_canberra x0 y0 x1 y1 =
 -- output { 2f32 }
 module chebyshev = mk_chebyshev f32 vector_2
 entry test_chebyshev x0 y0 x1 y1 =
-  chebyshev.distance (vector_2.from_array [x0, y0])
-                     (vector_2.from_array [x1, y1])
+  chebyshev.distance (vec2 [x0, y0])
+                     (vec2 [x1, y1])
 
 -- ==
 -- entry: test_correlation
@@ -37,8 +38,8 @@ entry test_chebyshev x0 y0 x1 y1 =
 -- output { 2f32 }
 module correlation = mk_correlation f32 vector_2
 entry test_correlation x0 y0 x1 y1 =
-  correlation.distance (vector_2.from_array [x0, y0])
-                       (vector_2.from_array [x1, y1])
+  correlation.distance (vec2 [x0, y0])
+                       (vec2 [x1, y1])
 
 -- ==
 -- entry: test_cosine
@@ -46,8 +47,8 @@ entry test_correlation x0 y0 x1 y1 =
 -- output { 0.29289321881345254f32 }
 module cosine = mk_cosine f32 vector_2
 entry test_cosine x0 y0 x1 y1 =
-  cosine.distance (vector_2.from_array [x0, y0])
-                  (vector_2.from_array [x1, y1])
+  cosine.distance (vec2 [x0, y0])
+                  (vec2 [x1, y1])
 
 -- ==
 -- entry: test_euclidean
@@ -55,8 +56,8 @@ entry test_cosine x0 y0 x1 y1 =
 -- output { 1.4142135623730951f32 }
 module euclidean = mk_euclidean f32 vector_2
 entry test_euclidean x0 y0 x1 y1 =
-  euclidean.distance (vector_2.from_array [x0, y0])
-                     (vector_2.from_array [x1, y1])
+  euclidean.distance (vec2 [x0, y0])
+                     (vec2 [x1, y1])
 
 -- ==
 -- entry: test_manhattan
@@ -64,8 +65,8 @@ entry test_euclidean x0 y0 x1 y1 =
 -- output { 2f32 }
 module manhattan = mk_manhattan f32 vector_2
 entry test_manhattan x0 y0 x1 y1 =
-  manhattan.distance (vector_2.from_array [x0, y0])
-                     (vector_2.from_array [x1, y1])
+  manhattan.distance (vec2 [x0, y0])
+                     (vec2 [x1, y1])
 
 -- ==
 -- entry: test_minkowski
@@ -73,8 +74,8 @@ entry test_manhattan x0 y0 x1 y1 =
 -- output { 2.8284271247461903f32 }
 module minkowski = mk_minkowski f32 vector_2
 entry test_minkowski x0 y0 x1 y1 =
-  minkowski.distance (vector_2.from_array [x0, y0])
-                     (vector_2.from_array [x1, y1])
+  minkowski.distance (vec2 [x0, y0])
+                     (vec2 [x1, y1])
 
 -- ==
 -- entry: test_sqeuclidean
@@ -82,5 +83,5 @@ entry test_minkowski x0 y0 x1 y1 =
 -- output { 8f32 }
 module sqeuclidean = mk_sqeuclidean f32 vector_2
 entry test_sqeuclidean x0 y0 x1 y1 =
-  sqeuclidean.distance (vector_2.from_array [x0, y0])
-                       (vector_2.from_array [x1, y1])
+  sqeuclidean.distance (vec2 [x0, y0])
+                       (vec2 [x1, y1])
