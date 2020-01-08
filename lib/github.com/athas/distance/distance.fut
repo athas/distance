@@ -9,8 +9,7 @@
 -- When using low-dimensional spaces (say, less than 10), use an
 -- appropriately constructed statically sized vector module (see
 -- `vector_1`@term@"../vector/vector" and
--- `cat_vector`@term@"../vector/vector").  For larger spaces, or
--- convenience when experimenting, use
+-- `cat_vector`@term@"../vector/vector").  For larger spaces, use
 -- `any_vector`@term@"../vector/vector".
 
 --  For convenience, the `vector` package is re-exported from this
