@@ -3,7 +3,7 @@
 import "set_distance"
 
 module vector_3 = cat_vector vector_1 (cat_vector vector_1 vector_1)
-let vec3 't (xs: []t) = vector_3.from_array (xs : [vector_3.length]t)
+let vec3 't (xs: []t) = vector_3.from_array (xs :> [vector_3.length]t)
 
 -- ==
 -- entry: test_dice

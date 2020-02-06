@@ -3,7 +3,7 @@
 import "distance"
 
 module vector_2 = cat_vector vector_1 vector_1
-let vec2 't (xs: []t) = vector_2.from_array (xs : [vector_2.length]t)
+let vec2 't (xs: []t) = vector_2.from_array (xs :> [vector_2.length]t)
 
 -- ==
 -- entry: test_braycurtis
