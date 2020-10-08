@@ -77,7 +77,7 @@ module mk_correlation (R: real) (V: vector)
   open (helpers R V)
 
   let distance (u: t) (v: t): distance =
-    let mean x = R.(V.reduce (+) (i32 0) x / i32 V.length)
+    let mean x = R.(V.reduce (+) (i32 0) x / i64 V.length)
     let u' = V.map (R.- mean u) u
     let v' = V.map (R.- mean v) v
     in R.(i32 1 - (u' `dotprod` v') / (norm u' * norm v'))
